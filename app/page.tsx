@@ -351,6 +351,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="relative z-20 bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-md flex flex-col gap-4 my-12"
         >
+          <input type="hidden" name="_captcha" value="false" />
           <input
             type="text"
             name="name"
