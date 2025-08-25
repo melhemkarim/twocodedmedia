@@ -28,9 +28,9 @@ const works = [
   {
     id: 3,
     title: "Danah Jewlery",
-    subtitle: "Jewelry Design",
+    subtitle: "Branding",
     year: "2024",
-    tags: ["Jewelery", "Design", "Packaging"],
+    tags: ["Jewelery", "Design", "Branding"],
     images: ["/danah1.jpeg", "/danah2.jpeg"],
     details:
       "Jewelry design for Danah Jewlery, emphasizing elegance and craftsmanship in each piece.",
@@ -48,9 +48,9 @@ const works = [
   {
     id: 5,
     title: "Royal Chocolate",
-    subtitle: "Packaging Design",
+    subtitle: "Brand Identity ",
     year: "2024",
-    tags: ["Packaging", "Graphic Design"],
+    tags: ["Brand Identity", "Graphic Design"],
     images: ["/choco1.jpeg", "/choco2.jpeg"],
     details:
       "Packaging design for Royal Chocolate, using luxurious colors and textures to convey premium quality.",
@@ -107,7 +107,7 @@ const works = [
     ],
     details:
       "Portfolio website for showcasing projects and attracting potential clients with a clean and user-friendly design.",
-      Link: "https://karimgraphic.netlify.app",
+      Link: "karimgraphic.netlify.app",
   },
   {
     id: 10,
@@ -120,7 +120,7 @@ const works = [
     ],
     details:
       "Winery website for showcasing products and attracting potential customers with a sophisticated and elegant design.",
-      Link: "https://linata.netlify.app",
+      Link: "linata.netlify.app",
   },
 ];
 
