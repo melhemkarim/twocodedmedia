@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 const works = [
   {
     id: 1,
@@ -131,14 +132,14 @@ export default function Home() {
       >
         {/* Links (hidden on mobile) */}
         <div className="hidden md:flex gap-8 text-[#1b1c4f] text-sm font-medium tracking-wide">
-          <a className="hover:text-[#EE5D00] transition-colors duration-300" href="#">
+          <a className="hover:text-[#EE5D00] transition-colors duration-300" href="#home">
+            Home
+          </a>
+          <a className="hover:text-[#EE5D00] transition-colors duration-300" href="#work">
+            Work
+          </a>
+          <a className="hover:text-[#EE5D00] transition-colors duration-300" href="#about">
             About
-          </a>
-          <a className="hover:text-[#EE5D00] transition-colors duration-300" href="#">
-            Services
-          </a>
-          <a className="hover:text-[#EE5D00] transition-colors duration-300" href="#">
-            Portfolio
           </a>
         </div>
 
@@ -155,14 +156,14 @@ export default function Home() {
 
         {/* Contact Button */}
         <div className="flex items-center gap-2 md:gap-4">
-          <button className="border-2 border-[#1b1c4f] text-[#1b1c4f] text-xs md:text-sm px-4 md:px-5 py-1.5 md:py-2 rounded-xl font-semibold shadow-sm hover:bg-[#1b1c4f] hover:text-white transition duration-300">
+          <a className="border-2 border-[#1b1c4f] text-[#1b1c4f] text-xs md:text-sm px-4 md:px-5 py-1.5 md:py-2 rounded-xl font-semibold shadow-sm hover:bg-[#1b1c4f] hover:text-white transition duration-300" href="#services">
             Contact
-          </button>
+          </a>
         </div>
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="h-screen w-full relative flex flex-col items-center justify-center text-center overflow-hidden px-4">
+      <section id="home" className="h-screen w-full relative flex flex-col items-center justify-center text-center overflow-hidden px-4">
         <div className="absolute inset-0 bg-gradient-to-r from-[#000520] via-[#000B41] to-[#01167e] animate-gradient-x"></div>
 
         <div className="absolute bottom-0 left-0 w-52 md:w-80 opacity-10 z-0">
@@ -216,7 +217,7 @@ export default function Home() {
       </section>
       
       {/* Recent Works Accordion Section */}
-      <section className="min-h-screen bg-white text-[#1b1c4f] relative flex flex-col justify-center items-center px-4 sm:px-6 py-16 md:py-20">
+      <section id="work"  className="min-h-screen bg-white text-[#1b1c4f] relative flex flex-col justify-center items-center px-4 sm:px-6 py-16 md:py-20">
         <div className="absolute bottom-0 right-0 w-52 md:w-80 opacity-30 z-0 pointer-events-none">
           <Image
             src="/logo2.png"
@@ -311,7 +312,7 @@ export default function Home() {
       </section>
             
       {/* Services */}
-         <section className="h-screen w-full relative flex flex-col items-center justify-center text-center snap-start overflow-hidden px-4">
+         <section id="services" className="h-screen w-full relative flex flex-col items-center justify-center text-center snap-start overflow-hidden px-4">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#000520] via-[#000B41] to-[#01167e] animate-gradient-x"></div>
 
@@ -377,6 +378,24 @@ export default function Home() {
           >
             Send Message
           </button>
+          <div className="flex justify-center gap-10 m-4 mt-4">
+    <a
+      href="https://wa.me/0096171958051"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#ffffff] text-4xl hover:scale-110 transition-transform"
+    >
+      <FaWhatsapp />
+    </a>
+    <a
+      href="https://www.instagram.com/twocodedmedia?igsh=MWh2dW5kY2N5cGtzOQ=="
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#ffffff] text-4xl hover:scale-110 transition-transform"
+    >
+      <FaInstagram />
+    </a>
+  </div>
         </motion.form>
       ) : (
         <motion.div
@@ -392,6 +411,7 @@ export default function Home() {
   <p className="text-gray-200 text-sm sm:text-base">
     We received your email and will get back to you shortly. Thank you for reaching out!
   </p>
+  
 </motion.div>
       )}
 
@@ -405,64 +425,76 @@ export default function Home() {
       >
         Start your journey with us today. We’re here to help bring your ideas to life.
       </motion.p>
+      
     </section>
 
       {/* Footer */}
       <motion.footer
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="bg-[#ffffff] text-[#000B41] py-12 sm:py-16 px-6 md:px-12 relative snap-start"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="bg-[#ffffff] text-[#000B41] py-12 sm:py-16 px-6 md:px-12 relative snap-start"
+  id="about"
+>
+  {/* Top Nav */}
+  <div className="flex justify-center gap-6 mb-12">
+    {[
+      { name: "Home", href: "#home" },
+      { name: "Work", href: "#work" },
+      { name: "Services", href: "#services" },
+      { name: "About", href: "#about" },
+    ].map((item) => (
+      <Link
+        key={item.name}
+        href={item.href}
+        className="px-6 py-2 border border-black rounded-full font-bold tracking-wide hover:bg-[#000B41] hover:text-white transition"
       >
-        
-      {/* Top Nav */}
-      <div className="flex justify-center gap-6 mb-12">
-        {["Home", "Work", "Services", "About"].map((item) => (
-          <Link
-            key={item}
-            href="#"
-            className="px-6 py-2 border border-black rounded-full font-bold tracking-wide hover:bg-[#000B41] hover:text-white transition"
-          >
-            {item.toUpperCase()}
+        {item.name.toUpperCase()}
+      </Link>
+    ))}
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+    {/* Left - Company Info */}
+    <div className="space-y-2">
+      <h2 className="text-3xl font-bold mb-6">ABOUT</h2>
+      <p>
+        At Twocoded, we specialize in branding, graphic design, and packaging, creating visuals that make a lasting impression. We also design and develop websites and mobile apps, blending creativity with functionality to deliver seamless digital experiences. Every project is crafted to reflect your brand’s identity and connect with your audience, turning ideas into impactful, memorable solutions.
+      </p>
+    </div>
+
+    {/* Center - TALK TO US */}
+    <div className="flex flex-col items-center justify-center text-center">
+      <div className="flex gap-4 text-sm mb-2"></div>
+      <h1 className="text-6xl md:text-7xl font-black tracking-tight">
+        TWOCODED
+      </h1>
+    </div>
+
+    {/* Right - Socials + Button */}
+    <div className="flex flex-col items-end gap-6">
+      <div className="flex flex-col text-right space-y-2 font-bold">
+        {[
+          { name: "Instagram", href: "https://www.instagram.com/twocodedmedia?igsh=MWh2dW5kY2N5cGtzOQ==" },
+          { name: "LinkedIn", href: "https://www.linkedin.com/company/twocoded" },
+          { name: "Whatsapp", href: "https://wa.me/0096171958051" },
+        ].map((social) => (
+          <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
+            {social.name.toUpperCase()}
           </Link>
         ))}
       </div>
+      <a
+        className="bg-[#EE5D00] text-white font-bold px-6 py-4 rounded-none text-lg shadow-md hover:bg-[#ff7723] transition"
+        href="#services"
+      >
+        EMAIL US!
+      </a>
+    </div>
+  </div>
+</motion.footer>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Left - Company Info */}
-        <div className="space-y-2">
-          <h2 className="text-3xl font-bold mb-6">ABOUT</h2>
-          <p>At Twocoded, we specialize in branding, graphic design, and packaging, creating visuals that make a lasting impression. We also design and develop websites and mobile apps, blending creativity with functionality to deliver seamless digital experiences. Every project is crafted to reflect your brand’s identity and connect with your audience, turning ideas into impactful, memorable solutions.</p>
-        </div>
-
-        {/* Center - TALK TO US */}
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="flex gap-4 text-sm mb-2">
-          
-          </div>
-          <h1 className="text-6xl md:text-7xl font-black tracking-tight">
-            TWOCODED
-          </h1>
-        </div>
-
-        {/* Right - Socials + Button */}
-        <div className="flex flex-col items-end gap-6">
-          <div className="flex flex-col text-right space-y-2 font-bold">
-            {["Instagram", "Facebook", "LinkedIn", "Dribbble", "Behance"].map(
-              (social) => (
-                <Link key={social} href="#" className="hover:underline">
-                  {social.toUpperCase()}
-                </Link>
-              )
-            )}
-          </div>
-          <button className="bg-[#EE5D00] text-white font-bold px-6 py-4 rounded-none text-lg shadow-md hover:bg-[#ff7723] transition">
-            CONTACT US
-          </button>
-        </div>
-      </div>
-      </motion.footer>
 
       <style jsx>{`
         @keyframes gradient-x {
