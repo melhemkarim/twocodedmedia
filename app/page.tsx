@@ -365,122 +365,124 @@ export default function Home() {
       </section>
             
       {/* Services */}
-         <section id="services" className="h-screen w-full relative flex flex-col items-center justify-center text-center snap-start overflow-hidden px-4">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#000520] via-[#000B41] to-[#01167e] animate-gradient-x"></div>
-
-      {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white relative z-20"
-      >
-        LET&apos;S <span className="text-[#EE5D00]">WORK</span> TOGETHER
-      </motion.h2>
-
-      {/* Scrolling Marquee */}
-      <div className="absolute w-full top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none z-10">
-        <div className="flex whitespace-nowrap animate-marquee gap-8 md:gap-12 text-xs sm:text-base md:text-xl font-semibold text-white opacity-40">
-          <span>
-            Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
-            Print Design ✦ Merch & Special Projects ✦ Mobile App Development ✦
-          </span>
-          <span>
-            Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
-            Print Design ✦ Merch & Special Projects ✦ Mobile App Development ✦
-          </span>
-        </div>
-      </div>
-
-      {/* Contact Form or Success Message */}
-      {!submitted ? (
-        <motion.form
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-md flex flex-col gap-4 my-12"
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00]"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00]"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            required
-            rows={4}
-            className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00]"
-          ></textarea>
-          <button
-            type="submit"
-            className="py-3 px-6 bg-[#EE5D00] text-white font-semibold rounded-lg shadow-md hover:bg-[#ff762a] transition-colors"
-          >
-            Send Message
-          </button>
-          <div className="flex justify-center gap-10 m-4 mt-4">
-    <a
-      href="https://wa.me/0096171958051"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#ffffff] text-4xl hover:scale-110 transition-transform"
-    >
-      <FaWhatsapp />
-    </a>
-    <a
-      href="https://www.instagram.com/twocodedmedia?igsh=MWh2dW5kY2N5cGtzOQ=="
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#ffffff] text-4xl hover:scale-110 transition-transform"
-    >
-      <FaInstagram />
-    </a>
-  </div>
-        </motion.form>
-      ) : (
-        <motion.div
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8 }}
-  className="relative z-20 flex flex-col items-center gap-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-6 sm:p-8 my-12 max-w-md mx-auto text-center"
+         <section
+  id="services"
+  className="min-h-screen w-full relative flex flex-col items-center justify-center text-center snap-start overflow-hidden px-4"
 >
-  <div className="text-[#EE5D00] text-4xl sm:text-5xl">✅</div>
-  <h3 className="text-white text-2xl sm:text-3xl font-bold">
-    Message Sent!
-  </h3>
-  <p className="text-gray-200 text-sm sm:text-base">
-    We received your email and will get back to you shortly. Thank you for reaching out!
-  </p>
-  
-</motion.div>
-      )}
+  {/* Background Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#000520] via-[#000B41] to-[#01167e] animate-gradient-x"></div>
 
-      {/* Description */}
-      <motion.p
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-white text-sm sm:text-base md:text-xl max-w-md md:max-w-xl z-20"
+  {/* Heading */}
+  <motion.h2
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white relative z-20 px-2"
+  >
+    LET&apos;S <span className="text-[#EE5D00]">WORK</span> TOGETHER
+  </motion.h2>
+
+  {/* Scrolling Marquee */}
+  <div className="absolute w-full top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none z-10">
+    <div className="flex whitespace-nowrap animate-marquee gap-6 sm:gap-10 md:gap-14 text-xs sm:text-sm md:text-lg lg:text-xl font-semibold text-white opacity-40">
+      <span>
+        Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
+        Print Design ✦ Merch & Special Projects ✦ Mobile App Development ✦
+      </span>
+      <span>
+        Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
+        Print Design ✦ Merch & Special Projects ✦ Mobile App Development ✦
+      </span>
+    </div>
+  </div>
+
+  {/* Contact Form or Success Message */}
+  {!submitted ? (
+    <motion.form
+      onSubmit={handleSubmit}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative z-20 bg-white/10 backdrop-blur-lg p-5 sm:p-7 md:p-8 rounded-2xl shadow-lg w-full max-w-md flex flex-col gap-4 my-10"
+    >
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00] text-sm sm:text-base"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00] text-sm sm:text-base"
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        required
+        rows={4}
+        className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00] text-sm sm:text-base"
+      ></textarea>
+      <button
+        type="submit"
+        className="py-3 px-6 bg-[#EE5D00] text-white font-semibold rounded-lg shadow-md hover:bg-[#ff762a] transition-colors text-sm sm:text-base"
       >
-        Start your journey with us today. We’re here to help bring your ideas to life.
-      </motion.p>
-      
-    </section>
+        Send Message
+      </button>
+      <div className="flex justify-center gap-8 sm:gap-10 mt-4">
+        <a
+          href="https://wa.me/0096171958051"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#ffffff] text-3xl sm:text-4xl hover:scale-110 transition-transform"
+        >
+          <FaWhatsapp />
+        </a>
+        <a
+          href="https://www.instagram.com/twocodedmedia?igsh=MWh2dW5kY2N5cGtzOQ=="
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#ffffff] text-3xl sm:text-4xl hover:scale-110 transition-transform"
+        >
+          <FaInstagram />
+        </a>
+      </div>
+    </motion.form>
+  ) : (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative z-20 flex flex-col items-center gap-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-6 sm:p-8 my-12 max-w-md mx-auto text-center"
+    >
+      <div className="text-[#EE5D00] text-4xl sm:text-5xl">✅</div>
+      <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold">
+        Message Sent!
+      </h3>
+      <p className="text-gray-200 text-sm sm:text-base">
+        We received your email and will get back to you shortly. Thank you for reaching out!
+      </p>
+    </motion.div>
+  )}
+
+  {/* Description - Always One Line */}
+  <motion.p
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+    className="text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-4 relative z-20 whitespace-nowrap overflow-x-auto scrollbar-none"
+  >
+    Start your journey with us today. We’re here to help bring your ideas to life.
+  </motion.p>
+</section>
+
 
       {/* Footer */}
       <motion.footer
