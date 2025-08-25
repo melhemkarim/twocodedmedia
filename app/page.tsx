@@ -111,7 +111,7 @@ const works = [
   },
   {
     id: 10,
-    title: "Winery Website",
+    title: "Linata Winery Website",
     subtitle: "Website Development",
     year: "2025",
     tags: ["Website", "Development" , "Responsive"],
@@ -120,7 +120,7 @@ const works = [
     ],
     details:
       "Winery website for showcasing products and attracting potential customers with a sophisticated and elegant design.",
-      Link: "https://winery.netlify.app",
+      Link: "https://linata.netlify.app",
   },
 ];
 
