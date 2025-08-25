@@ -67,8 +67,8 @@ const works = [
   },
   {
     id: 7,
-    title: "Kindness + Billboards",
-    subtitle: "Graphic Design",
+    title: "Cyberbullying",
+    subtitle: ", Social Media & OOH",
     year: "2024",
     tags: ["Billboards", "Graphic Design", "Creative"],
     images: [
