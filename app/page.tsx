@@ -82,6 +82,46 @@ const works = [
     details:
       "Graphic design for Kindness billboards, focusing on impactful visuals and messaging to promote kindness in the community.",
   },
+  {
+    id: 8,
+    title: "TWOCODED ",
+    subtitle: "Brand Identity + Website Development",
+    year: "2025",
+    tags: ["Brand Identity", "Website", "Development"],
+    images: [
+      "/twocoded1.png",
+      "/twocoded2.png",
+    ],
+    details:
+      "Brand identity and website development for TWOCODED, showcasing a modern and professional look to attract clients.",
+      Link: "twocodedmedia.online",
+  },
+  {
+    id: 9,
+    title: "Portfolio Website",
+    subtitle: "Website Development",
+    year: "2025",
+    tags: ["Website", "Development" , "Responsive"],
+    images: [
+      
+    ],
+    details:
+      "Portfolio website for showcasing projects and attracting potential clients with a clean and user-friendly design.",
+      Link: "https://karimgraphic.netlify.app",
+  },
+  {
+    id: 10,
+    title: "Winery Website",
+    subtitle: "Website Development",
+    year: "2025",
+    tags: ["Website", "Development" , "Responsive"],
+    images: [
+      
+    ],
+    details:
+      "Winery website for showcasing products and attracting potential customers with a sophisticated and elegant design.",
+      Link: "https://winery.netlify.app",
+  },
 ];
 
 export default function Home() {
@@ -286,23 +326,36 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {work.images.map((img, i) => (
-           <motion.div
-            key={i}
-            whileHover={{ scale: 1.03 }}
-            className="relative w-full rounded-xl overflow-hidden border border-gray-200"
-          >
-           <Image
-             src={img}
-              alt={work.title}
-              width={800}   // ✅ let Next.js optimize properly
-              height={600}  // aspect ratio handled automatically
-             className="w-full h-auto object-contain"
-            />
-         </motion.div>
+  {work.images.map((img, i) => (
+    <motion.div
+      key={i}
+      whileHover={{ scale: 1.03 }}
+      className="relative w-full rounded-xl overflow-hidden border border-gray-200"
+    >
+      <Image
+        src={img}
+        alt={work.title}
+        width={800}
+        height={600}
+        className="w-full h-auto object-contain"
+      />
+    </motion.div>
   ))}
 </div>
 
+{/* Show Live Preview button if link exists */}
+{work.Link && (
+  <div className="mt-4">
+    <a
+      href={`https://${work.Link}`} 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block px-4 py-2 bg-[#EE5D00] text-white text-sm font-semibold rounded-lg shadow hover:bg-[#ff762a] transition"
+    >
+      🔗 Live Preview
+    </a>
+  </div>
+)}
                   </motion.div>
                 )}
               </AnimatePresence>
