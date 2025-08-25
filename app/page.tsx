@@ -68,7 +68,7 @@ const works = [
   {
     id: 7,
     title: "Cyberbullying",
-    subtitle: ", Social Media & OOH",
+    subtitle: "Social Media & OOH",
     year: "2024",
     tags: ["Billboards", "Graphic Design", "Creative"],
     images: [
@@ -82,8 +82,66 @@ const works = [
     details:
       "Graphic design for Kindness billboards, focusing on impactful visuals and messaging to promote kindness in the community.",
   },
-  {
+   {
     id: 8,
+    title: "Posters",
+    subtitle: "Social Media ",
+    year: "2024",
+    tags: ["Posts", "Social Media", "Creative"],
+    images: [
+      "/poster1.png",
+      "/poster2.png",
+      "/poster3.png",
+      "/poster4.png",
+      "/poster5.png",
+      "/poster6.png",
+    ],
+    details:
+      "Poster designs for social media campaigns, utilizing bold graphics and concise messaging to engage the audience.",
+  },
+   {
+    id: 9,
+    title: "Bershka Redesign",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/bershka1.png",
+      "/bershka2.png",
+    ],
+    details:
+      "UI/UX redesign for Bershka, focusing on enhancing user experience through intuitive navigation and modern aesthetics.",
+  },
+  {
+    id: 10,
+    title: "Roadster Diner Redesign",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/roadster.png",
+      "/roadster2.png",
+    ],
+    details:
+      "UI/UX redesign for Roadster Diner, creating a visually appealing and user-friendly website to showcase their menu and services.",
+  },
+  {
+     id: 11,
+    title: "Luminous SkinCare Web Design",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/luminous1.png",
+      "/luminous2.png",
+      "/luminous3.png",
+    ],
+    details:
+      "UI/UX design for Luminous, creating a visually appealing and user-friendly website to showcase their products and services.",
+  },
+  
+  {
+    id: 12,
     title: "TWOCODED ",
     subtitle: "Brand Identity + Website Development",
     year: "2025",
@@ -97,7 +155,7 @@ const works = [
       Link: "twocodedmedia.online",
   },
   {
-    id: 9,
+    id: 13,
     title: "Portfolio Website",
     subtitle: "Website Development",
     year: "2025",
@@ -110,7 +168,7 @@ const works = [
       Link: "karimgraphic.netlify.app",
   },
   {
-    id: 10,
+    id: 14,
     title: "Linata Winery Website",
     subtitle: "Website Development",
     year: "2025",
