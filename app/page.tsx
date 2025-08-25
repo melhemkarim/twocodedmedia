@@ -85,7 +85,7 @@ const works = [
    {
     id: 8,
     title: "Posters",
-    subtitle: "Social Media ",
+    subtitle: "Print Design",
     year: "2024",
     tags: ["Posts", "Social Media", "Creative"],
     images: [
@@ -133,8 +133,8 @@ const works = [
     tags: ["UI/UX", "Web Design", "Creative"],
     images: [
       "/luminous1.png",
-      "/luminous2.png",
       "/luminous3.png",
+      "/luminous4.png",
     ],
     details:
       "UI/UX design for Luminous, creating a visually appealing and user-friendly website to showcase their products and services.",
@@ -309,8 +309,8 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.4 }}
           className="mt-6 sm:mt-8 text-gray-200 max-w-md md:max-w-xl text-sm sm:text-base md:text-lg relative z-10"
         >
-          We craft impactful brands, user experiences, and custom digital
-          solutions tailored to your needs.
+          We craft impactful brands, user experiences,<br /> 
+          and custom digital solutions tailored to your needs.
         </motion.p>
       </section>
       
