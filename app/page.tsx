@@ -1,9 +1,8 @@
 "use client";
-
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
 const works = [
   {
     id: 1,
@@ -99,7 +98,22 @@ export default function Home() {
   // Scroll progress bar
   const { scrollYProgress } = useViewportScroll();
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Send to FormSubmit
+    await fetch("https://formsubmit.co/twocodedmedia@gmail.com", {
+      method: "POST",
+      body: formData,
+    });
+
+    setSubmitted(true);
+    form.reset();
+  };
   return (
     <main className="h-screen w-full overflow-y-scroll scroll-smooth relative">
       {/* Scroll Progress Bar */}
@@ -200,7 +214,7 @@ export default function Home() {
           solutions tailored to your needs.
         </motion.p>
       </section>
-
+      
       {/* Recent Works Accordion Section */}
       <section className="min-h-screen bg-white text-[#1b1c4f] relative flex flex-col justify-center items-center px-4 sm:px-6 py-16 md:py-20">
         <div className="absolute bottom-0 right-0 w-52 md:w-80 opacity-30 z-0 pointer-events-none">
@@ -271,20 +285,20 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-  {work.images.map((img, i) => (
-    <motion.div
-      key={i}
-      whileHover={{ scale: 1.03 }}
-      className="relative w-full rounded-xl overflow-hidden border border-gray-200"
-    >
-      <Image
-        src={img}
-        alt={work.title}
-        width={800}   // ✅ let Next.js optimize properly
-        height={600}  // aspect ratio handled automatically
-        className="w-full h-auto object-contain"
-      />
-    </motion.div>
+            {work.images.map((img, i) => (
+           <motion.div
+            key={i}
+            whileHover={{ scale: 1.03 }}
+            className="relative w-full rounded-xl overflow-hidden border border-gray-200"
+          >
+           <Image
+             src={img}
+              alt={work.title}
+              width={800}   // ✅ let Next.js optimize properly
+              height={600}  // aspect ratio handled automatically
+             className="w-full h-auto object-contain"
+            />
+         </motion.div>
   ))}
 </div>
 
@@ -295,60 +309,103 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+            
       {/* Services */}
-      <section className="h-screen w-full relative flex flex-col items-center justify-center text-center snap-start overflow-hidden px-4">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000520] via-[#000B41] to-[#01167e] animate-gradient-x"></div>
+         <section className="h-screen w-full relative flex flex-col items-center justify-center text-center snap-start overflow-hidden px-4">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#000520] via-[#000B41] to-[#01167e] animate-gradient-x"></div>
 
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white relative z-20"
-        >
-          LET&apos;S <span className="text-[#EE5D00]">WORK</span> TOGETHER
-        </motion.h2>
+      {/* Heading */}
+      <motion.h2
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white relative z-20"
+      >
+        LET&apos;S <span className="text-[#EE5D00]">WORK</span> TOGETHER
+      </motion.h2>
 
-        <div className="absolute w-full top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none z-10">
-          <div className="flex whitespace-nowrap animate-marquee gap-8 md:gap-12 text-xs sm:text-base md:text-xl font-semibold text-white opacity-40">
-            <span>
-              Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
-              Print Design ✦ Merch & Special Projects ✦ Mobile App Developement ✦
-            </span>
-            <span>
-              Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
-              Print Design ✦ Merch & Special Projects ✦ Mobile App Developement ✦
-            </span>
-          </div>
+      {/* Scrolling Marquee */}
+      <div className="absolute w-full top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none z-10">
+        <div className="flex whitespace-nowrap animate-marquee gap-8 md:gap-12 text-xs sm:text-base md:text-xl font-semibold text-white opacity-40">
+          <span>
+            Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
+            Print Design ✦ Merch & Special Projects ✦ Mobile App Development ✦
+          </span>
+          <span>
+            Branding & Identity ✦ Digital & Social Media ✦ Web Design & Development ✦
+            Print Design ✦ Merch & Special Projects ✦ Mobile App Development ✦
+          </span>
         </div>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, rotate: -10 }}
-          whileInView={{ opacity: 1, rotate: 0 }}
-          viewport={{ once: true }}
-          whileHover={{ rotate: 5, scale: 1.05 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 my-12 sm:my-16 z-20"
-        >
-          <Image
-            src="/b1.jpeg"
-            alt="Central Visual"
-            fill
-            className="object-contain"
-          />
-        </motion.div>
-
-        <motion.p
+      {/* Contact Form or Success Message */}
+      {!submitted ? (
+        <motion.form
+          onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-white text-sm sm:text-base md:text-xl max-w-md md:max-w-xl z-20"
+          transition={{ duration: 0.8 }}
+          className="relative z-20 bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-md flex flex-col gap-4 my-12"
         >
-          Start your journey with us today. We’re here to help bring your ideas to life.
-        </motion.p>
-      </section>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00]"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00]"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            rows={4}
+            className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#EE5D00]"
+          ></textarea>
+          <button
+            type="submit"
+            className="py-3 px-6 bg-[#EE5D00] text-white font-semibold rounded-lg shadow-md hover:bg-[#ff762a] transition-colors"
+          >
+            Send Message
+          </button>
+        </motion.form>
+      ) : (
+        <motion.div
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8 }}
+  className="relative z-20 flex flex-col items-center gap-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-6 sm:p-8 my-12 max-w-md mx-auto text-center"
+>
+  <div className="text-[#EE5D00] text-4xl sm:text-5xl">✅</div>
+  <h3 className="text-white text-2xl sm:text-3xl font-bold">
+    Message Sent!
+  </h3>
+  <p className="text-gray-200 text-sm sm:text-base">
+    We received your email and will get back to you shortly. Thank you for reaching out!
+  </p>
+</motion.div>
+      )}
+
+      {/* Description */}
+      <motion.p
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="text-white text-sm sm:text-base md:text-xl max-w-md md:max-w-xl z-20"
+      >
+        Start your journey with us today. We’re here to help bring your ideas to life.
+      </motion.p>
+    </section>
 
       {/* Footer */}
       <motion.footer
@@ -358,44 +415,53 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="bg-[#ffffff] text-[#000B41] py-12 sm:py-16 px-6 md:px-12 relative snap-start"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-start text-sm">
-          <div>
-            <h4 className="font-bold mb-2 md:mb-4">Sitemap</h4>
-            <ul className="space-y-1 md:space-y-2">
-              <li><a href="#">Overview</a></li>
-              <li><a href="#">Work</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Pricing</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-2 md:mb-4">Legal</h4>
-            <ul className="space-y-1 md:space-y-2">
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Privacy</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-2 md:mb-4">Social</h4>
-            <ul className="space-y-1 md:space-y-2">
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ul>
-          </div>
-          <div className="col-span-2 md:col-span-1 flex md:block justify-center md:justify-start">
-            <a
-              href="mailto:twocodedmedia@gmail.com"
-              className="inline-block bg-[#ffffff] text-[#000B41] text-sm md:text-base px-4 md:px-6 py-2 md:py-3 rounded-xl font-bold shadow-md hover:bg-white hover:text-[#EE5D00] transition"
-            >
-              CONTACT NOW
-            </a>
-          </div>
+        
+      {/* Top Nav */}
+      <div className="flex justify-center gap-6 mb-12">
+        {["Home", "Work", "Services", "About"].map((item) => (
+          <Link
+            key={item}
+            href="#"
+            className="px-6 py-2 border border-black rounded-full font-bold tracking-wide hover:bg-[#000B41] hover:text-white transition"
+          >
+            {item.toUpperCase()}
+          </Link>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        {/* Left - Company Info */}
+        <div className="space-y-2">
+          <h2 className="text-3xl font-bold mb-6">ABOUT</h2>
+          <p>At Twocoded, we specialize in branding, graphic design, and packaging, creating visuals that make a lasting impression. We also design and develop websites and mobile apps, blending creativity with functionality to deliver seamless digital experiences. Every project is crafted to reflect your brand’s identity and connect with your audience, turning ideas into impactful, memorable solutions.</p>
         </div>
-        <div className="mt-12 md:mt-16 text-[#000B41] text-center md:text-left">
-          <p className="text-xs md:text-sm">© 2024 TwoCoded. All Rights Reserved.</p>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold">TWOCODED</h1>
+
+        {/* Center - TALK TO US */}
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex gap-4 text-sm mb-2">
+          
+          </div>
+          <h1 className="text-6xl md:text-7xl font-black tracking-tight">
+            TWOCODED
+          </h1>
         </div>
+
+        {/* Right - Socials + Button */}
+        <div className="flex flex-col items-end gap-6">
+          <div className="flex flex-col text-right space-y-2 font-bold">
+            {["Instagram", "Facebook", "LinkedIn", "Dribbble", "Behance"].map(
+              (social) => (
+                <Link key={social} href="#" className="hover:underline">
+                  {social.toUpperCase()}
+                </Link>
+              )
+            )}
+          </div>
+          <button className="bg-[#EE5D00] text-white font-bold px-6 py-4 rounded-none text-lg shadow-md hover:bg-[#ff7723] transition">
+            CONTACT US
+          </button>
+        </div>
+      </div>
       </motion.footer>
 
       <style jsx>{`
