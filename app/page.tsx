@@ -127,21 +127,49 @@ const works = [
   },
   {
      id: 11,
-    title: "Luminous SkinCare Web Design",
+    title: "Build a bear Web Design",
     subtitle: "UI/UX Design",
     year: "2025",
     tags: ["UI/UX", "Web Design", "Creative"],
     images: [
-      "/luminous1.png",
-      "/luminous3.png",
-      "/luminous4.png",
+      "/bear1.png",
+      "/bear2.png",
+    ],
+    details:
+      "UI/UX design for Build a Bear, creating a visually appealing and user-friendly website to showcase their products and services.",
+  },
+
+  {
+     id: 12,
+    title: "Danah Jewlery Web Design",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/jewlery1.png",
+      "/jewlery2.png",
+      "/jewlery3.png",
     ],
     details:
       "UI/UX design for Luminous, creating a visually appealing and user-friendly website to showcase their products and services.",
   },
+
+  {
+     id: 13,
+    title: "Phone UI/UX Design",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/phone.png",
+      
+    ],
+    details:
+      "UI/UX design for phone apps, creating a visually appealing and user-friendly interface to enhance user experience.",
+  },
   
   {
-    id: 12,
+    id: 14,
     title: "TWOCODED ",
     subtitle: "Brand Identity + Website Development",
     year: "2025",
@@ -155,7 +183,7 @@ const works = [
       Link: "twocodedmedia.online",
   },
   {
-    id: 13,
+    id: 15,
     title: "Portfolio Website",
     subtitle: "Website Development",
     year: "2025",
@@ -168,7 +196,7 @@ const works = [
       Link: "karimgraphic.netlify.app",
   },
   {
-    id: 14,
+    id: 16,
     title: "Linata Winery Website",
     subtitle: "Website Development",
     year: "2025",
