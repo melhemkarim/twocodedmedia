@@ -167,9 +167,64 @@ const works = [
     details:
       "UI/UX design for phone apps, creating a visually appealing and user-friendly interface to enhance user experience.",
   },
+    {
+     id: 14,
+    title: "Armish ",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/armish1.png",
+      "/armish2.png",
+      
+    ],
+    details:
+      "UI/UX design freeze dried fruit website, creating a visually appealing and user-friendly interface to enhance user experience.",
+  },
+    {
+     id: 15,
+    title: "Drive Car rent",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/drive1.png",
+      "/drive2.png",
+      
+    ],
+    details:
+      "UI/UX design for car rental website, creating a visually appealing and user-friendly interface to enhance user experience.",
+  },
+   {
+     id: 16,
+    title: "Fly beirut",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/flybeirut.png",
+      
+    ],
+    details:
+      "UI/UX design for fly beirut airline website, creating a visually appealing and user-friendly interface to enhance user experience.",
+  },
+    {
+     id: 17,
+    title: "Agency Website",
+    subtitle: "UI/UX Design",
+    year: "2025",
+    tags: ["UI/UX", "Web Design", "Creative"],
+    images: [
+      "/ele1.png",
+      "/ele2.png",
+      
+    ],
+    details:
+      "UI/UX design an agency website, creating a visually appealing and user-friendly interface to enhance user experience.",
+  },
   
   {
-    id: 14,
+    id: 18,
     title: "TWOCODED ",
     subtitle: "Brand Identity + Website Development",
     year: "2025",
@@ -183,7 +238,7 @@ const works = [
       Link: "twocodedmedia.online",
   },
   {
-    id: 15,
+    id: 19,
     title: "Portfolio Website",
     subtitle: "Website Development",
     year: "2025",
@@ -196,7 +251,7 @@ const works = [
       Link: "karimgraphic.netlify.app",
   },
   {
-    id: 16,
+    id: 20,
     title: "Linata Winery Website",
     subtitle: "Website Development",
     year: "2025",
